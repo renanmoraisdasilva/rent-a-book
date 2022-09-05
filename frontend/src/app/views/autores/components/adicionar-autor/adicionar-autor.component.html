@@ -1,0 +1,65 @@
+<!-- Form -->
+<div class="row">
+  <div class="p-field p-col-12 p-md-4">
+    <div class="p-float-label">
+      <input
+        required
+        type="text"
+        id="inputtext"
+        [(ngModel)]="novoAutor.nome"
+        pInputText
+      />
+      <label for="inputtext">Nome</label>
+    </div>
+  </div>
+  <div class="p-field p-col-12 p-md-4">
+    <div class="p-float-label">
+      <input
+        required
+        type="email"
+        pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+        id="inputtext"
+        [(ngModel)]="novoAutor.email"
+        pInputText
+      />
+      <label for="inputtext">Email</label>
+    </div>
+  </div>
+  <div class="p-field p-col-12 p-md-4">
+    <div class="p-float-label">
+      <p-inputMask
+        inputId="inputmask"
+        [(ngModel)]="novoAutor.ISNI"
+        mask="9999 9999 9999 9999"
+      ></p-inputMask>
+      <label for="inputtext">ISNI</label>
+    </div>
+  </div>
+  <div class="p-field p-col-12 p-md-4">
+    <div class="p-float-label">
+      <p-calendar
+        [(ngModel)]="novoAutor.dataNascimento"
+        [showIcon]="true"
+        [monthNavigator]="true"
+        [yearNavigator]="true"
+        yearRange="1900:2022"
+        dateFormat="dd/mm/yy"
+        inputId="icon"
+      ></p-calendar>
+      <label for="inputtext">Data de Nascimento</label>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="p-field p-col-12 p-md-4">
+    <span class="p-float-label">
+      <textarea
+        [(ngModel)]="novoAutor.biografia"
+        rows="10"
+        cols="100"
+        pInputTextarea
+      ></textarea>
+      <label for="inputtext">Biografia</label>
+    </span>
+  </div>
+</div>

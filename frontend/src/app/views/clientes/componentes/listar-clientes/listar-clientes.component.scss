@@ -1,0 +1,30 @@
+::ng-deep {
+  .mat-column-acoes {
+    max-width: 150px;
+  }
+}
+
+::ng-deep .p-dialog {
+  border: none;
+}
+
+::ng-deep .p-dialog .p-dialog-header {
+  background-color: #303030;
+  color: #fff;
+}
+
+::ng-deep .p-dialog .p-dialog-content {
+  background-color: #303030;
+  color: #fff;
+}
+
+::ng-deep .p-dialog .p-dialog-footer {
+  background: #303030;
+  color: #fff;
+}
+::ng-deep .p-button.p-button-text {
+  background-color: #7b1fa2;
+  color: white;
+  border-color: transparent;
+}
+//

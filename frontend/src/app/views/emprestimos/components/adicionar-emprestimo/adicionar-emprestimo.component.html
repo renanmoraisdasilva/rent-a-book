@@ -1,0 +1,51 @@
+<!-- Form -->
+<div class="row">
+  <div class="p-field p-col-18 p-md-4">
+    <div class="p-float-label">
+      <p-dropdown
+        [options]="clientes"
+        [(ngModel)]="novoEmprestimo.clienteId"
+        placeholder="Selecione um nome"
+        [virtualScroll]="true"
+        [itemSize]="51"
+        [filter]="true"
+        filterBy="label"
+      ></p-dropdown>
+      <label for="inputtext">Nome do Cliente</label>
+    </div>
+  </div>
+  <div class="p-field p-col-12 p-md-4">
+    <div class="p-float-label">
+      <p-dropdown
+        [options]="livros"
+        [(ngModel)]="novoEmprestimo.livroId"
+        placeholder="Selecione um livro"
+        [virtualScroll]="true"
+        [itemSize]="31"
+        [filter]="true"
+        filterBy="label"
+      ></p-dropdown>
+      <label for="inputtext">Nome do Livro</label>
+    </div>
+  </div>
+  <div class="p-field p-col-12 p-md-4">
+    <div class="p-float-label">
+      <p-calendar
+        [(ngModel)]="novoEmprestimo.dataEmprestimo"
+        [showIcon]="true"
+        dateFormat="dd/mm/yy"
+      ></p-calendar>
+      <label>Data de Empréstimo</label>
+    </div>
+  </div>
+  <div class="p-field p-col-12 p-md-4">
+    <div class="p-float-label">
+      <p-calendar
+        [(ngModel)]="novoEmprestimo.dataDevolucao"
+        [showIcon]="true"
+        dateFormat="dd/mm/yy"
+      ></p-calendar>
+      <label>Data de Devolução</label>
+    </div>
+  </div>
+</div>

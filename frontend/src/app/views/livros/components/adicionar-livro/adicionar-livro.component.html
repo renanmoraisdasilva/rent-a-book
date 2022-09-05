@@ -1,0 +1,74 @@
+<!-- Form -->
+<div class="row">
+  <div class="p-field p-col-12 p-md-4">
+    <div class="p-float-label">
+      <input
+        required
+        type="text"
+        id="inputtext"
+        [(ngModel)]="novoLivro.nome"
+        pInputText
+      />
+      <label for="inputtext">Nome</label>
+    </div>
+  </div>
+  <div class="p-field p-col-12 p-md-4">
+    <div class="p-float-label">
+      <p-inputMask
+        inputId="inputmask"
+        [(ngModel)]="novoLivro.ISBN"
+        mask="999-99-99999-99-9"
+      ></p-inputMask>
+      <label for="inputtext">ISBN</label>
+    </div>
+  </div>
+  <div class="p-field p-col-12 p-md-4">
+    <div class="p-float-label">
+      <p-dropdown
+        [options]="years"
+        [(ngModel)]="novoLivro.anoDePublicacao"
+        placeholder="Selecione o Ano de Publicação"
+        [virtualScroll]="true"
+        [itemSize]="31"
+        [filter]="false"
+      ></p-dropdown>
+    </div>
+  </div>
+  <div class="p-field p-col-12 p-md-4">
+    <div class="p-float-label">
+      <input
+        required
+        type="text"
+        id="inputtext"
+        [(ngModel)]="novoLivro.editora"
+        pInputText
+      />
+      <label for="inputtext">Editora</label>
+    </div>
+  </div>
+  <div class="p-field p-col-12 p-md-4">
+    <p-dropdown
+      [options]="autores"
+      [(ngModel)]="novoLivro.autor.id"
+      placeholder="Selecione um autor"
+      [virtualScroll]="true"
+      [itemSize]="31"
+      [filter]="false"
+    ></p-dropdown>
+  </div>
+  <div class="column">
+    <div class="p-field p-col-12 p-md-4">
+      <div class="p-float-label">
+        <p-inputNumber
+          [(ngModel)]="novoLivro.quantidadeExemplares"
+          [showButtons]="true"
+          inputId="stacked"
+          [min]="0"
+        >
+        </p-inputNumber>
+        <label> &nbsp;&nbsp;&nbsp; Unidades</label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row"></div>

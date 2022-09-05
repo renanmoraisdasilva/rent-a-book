@@ -1,0 +1,94 @@
+<!-- Title -->
+<h1>Autores</h1>
+
+<!-- Button -->
+<div class="w-100 mb-3">
+  <button (click)="display = true" mat-raised-button color="primary" class="">
+    Novo
+  </button>
+</div>
+
+<!-- Table -->
+<mat-table [dataSource]="autores" class="mat-elevation-z8">
+  <!-- Header and Row Declarations -->
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+  <!-- User name Definition -->
+  <ng-container matColumnDef="nome">
+    <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.nome }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="ISNI">
+    <mat-header-cell *matHeaderCellDef> ISNI </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.ISNI }} </mat-cell>
+  </ng-container>
+
+  <!-- Age Definition -->
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef> E-mail </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.email }} </mat-cell>
+  </ng-container>
+
+  <!-- Title Definition -->
+  <ng-container matColumnDef="dataNascimento">
+    <mat-header-cell *matHeaderCellDef> Data de Nascimento </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.dataNascimento }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="biografia">
+    <mat-header-cell *matHeaderCellDef> Biografia </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.biografia }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="acoes">
+    <mat-header-cell *matHeaderCellDef style="width: 180px">
+      Ações
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row" style="width: 180px">
+      <button
+        (click)="handleClickEditar(row)"
+        mat-raised-button
+        color="accent"
+        class="me-2"
+      >
+        Editar
+      </button>
+      <button
+        (click)="confirmarExclusao($event, row)"
+        mat-raised-button
+        color="warn"
+        class=""
+      >
+        Excluir
+      </button>
+    </mat-cell>
+  </ng-container>
+</mat-table>
+
+<!-- Modal -->
+<p-dialog
+  header="Adicionar Autor"
+  [(visible)]="display"
+  [modal]="true"
+  [style]="{ width: '70vw' }"
+  [draggable]="false"
+  [resizable]="false"
+>
+  <app-adicionar-autor [(novoAutor)]="novoAutor"></app-adicionar-autor>
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-check"
+      (click)="handleClickConcluir()"
+      label="Concluir"
+      styleClass="p-button-text"
+    ></p-button>
+  </ng-template>
+</p-dialog>
+
+<!-- Toast -->
+<p-toast></p-toast>
+
+<!-- Confirmação -->
+<p-confirmPopup></p-confirmPopup>

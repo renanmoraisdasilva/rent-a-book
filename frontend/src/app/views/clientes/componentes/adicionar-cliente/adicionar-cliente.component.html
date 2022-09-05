@@ -1,0 +1,39 @@
+<!-- Form -->
+<div class="form">
+  <div class="p-field p-col-12 p-md-4">
+    <span class="p-float-label">
+      <input
+        required
+        type="text"
+        id="inputtext"
+        [(ngModel)]="novoCliente.nome"
+        pInputText
+      />
+
+      <label for="inputtext">Nome</label>
+    </span>
+  </div>
+  <div class="p-field p-col-12 p-md-4">
+    <span class="p-float-label">
+      <input
+        required
+        type="email"
+        pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+        id="inputtext"
+        [(ngModel)]="novoCliente.email"
+        pInputText
+      />
+      <label for="inputtext">Email</label>
+    </span>
+  </div>
+  <div class="p-field p-col-12 p-md-4">
+    <span class="p-float-label">
+      <p-inputMask
+        inputId="inputmask"
+        [(ngModel)]="novoCliente.contato"
+        mask="(99) 999-999-999"
+      ></p-inputMask>
+      <label for="inputtext">Telefone</label>
+    </span>
+  </div>
+</div>
