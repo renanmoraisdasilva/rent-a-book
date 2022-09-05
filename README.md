@@ -1,6 +1,7 @@
 Este projeto consiste em uma plataforma de biblioteca onde é possivel cadastrar CLIENTES, AUTORES, LIVROS E EMPRÉSTIMOS.
 
 O BACKEND foi desenvolvido em QUARKUS com ORM HIBERNATE E PANACHE. 
+
 O FRONTEND foi desenvolvido com ANGULAR v12 com uso de componentes PrimeNG e Angular Material.
 
 Funcionalidades:
